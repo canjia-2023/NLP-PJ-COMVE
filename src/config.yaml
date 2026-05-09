@@ -1,0 +1,59 @@
+# # ======== 通用配置 ========
+# model_name: "bert-base-uncased"
+# # model_name: "roberta-large"
+# max_length: 128
+# output_dir: "outputs"
+
+# # ======== Task A ========
+# taskA:
+#   train_data:   "../dataset/All_data/Training_Data/subtaskA_data_all.csv"      # ← 改成你的路径
+#   train_answer: "../dataset/All_data/Training_Data/subtaskA_answers_all.csv"
+#   dev_data:     "../dataset/All_data/Dev_Data/subtaskA_dev_data.csv"
+#   dev_answer:   "../dataset/All_data/Dev_Data/subtaskA_gold_answers.csv"
+#   test_data:    "../dataset/All_data/Test_Data/subtaskA_test_data.csv"
+#   batch_size: 16
+#   lr: 2e-5
+#   epochs: 4
+
+
+
+# # ======== Task B ========
+# taskB:
+#   train_data:   "../dataset/All_data/Training_Data/subtaskB_data_all.csv"      # ← 改成你的路径
+#   train_answer: "../dataset/All_data/Training_Data/subtaskB_answers_all.csv"
+#   dev_data:     "../dataset/All_data/Dev_Data/subtaskB_dev_data.csv"
+#   dev_answer:   "../dataset/All_data/Dev_Data/subtaskB_gold_answers.csv"
+#   test_data:    "../dataset/All_data/Test_Data/subtaskB_test_data.csv"
+#   batch_size: 8
+#   lr: 2e-5
+#   epochs: 4
+
+
+# ======== 通用配置 ========
+model_name: "roberta-large"
+max_length: 128
+output_dir: "outputs"
+
+# ======== Task A ========
+taskA:
+  train_data:   "../dataset/All_data/Training_Data/subtaskA_data_all.csv"
+  train_answer: "../dataset/All_data/Training_Data/subtaskA_answers_all.csv"
+  dev_data:     "../dataset/All_data/Dev_Data/subtaskA_dev_data.csv"
+  dev_answer:   "../dataset/All_data/Dev_Data/subtaskA_gold_answers.csv"
+  test_data:    "../dataset/All_data/Test_Data/subtaskA_test_data.csv"
+  batch_size: 16
+  lr: 2e-5
+  epochs: 3
+
+
+
+# ======== Task B ========
+taskB:
+  train_data:   "../dataset/All_data/Training_Data/subtaskB_data_all.csv"      # ← 改成你的路径
+  train_answer: "../dataset/All_data/Training_Data/subtaskB_answers_all.csv"
+  dev_data:     "../dataset/All_data/Dev_Data/subtaskB_dev_data.csv"
+  dev_answer:   "../dataset/All_data/Dev_Data/subtaskB_gold_answers.csv"
+  test_data:    "../dataset/All_data/Test_Data/subtaskB_test_data.csv"
+  batch_size: 8
+  lr: 2e-5
+  epochs: 3

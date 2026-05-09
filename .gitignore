@@ -1,0 +1,41 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Model checkpoints & outputs (large binary files)
+src/outputs/
+
+# Dataset (external, not part of source code)
+# dataset/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Conda environment
+.comve/
+*.yml
+!environment.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python virtual environment
+venv/
+.venv/
+env/
+.env
+
+# Logs
+*.log
+
+# Jupyter notebook outputs (optional, keeps diffs clean)
+# *.ipynb
