@@ -1,59 +1,62 @@
-# # ======== 通用配置 ========
-# model_name: "bert-base-uncased"
-# # model_name: "roberta-large"
-# max_length: 128
-# output_dir: "outputs"
+# ======== Common Config ========
+seed: 42
 
-# # ======== Task A ========
-# taskA:
-#   train_data:   "../dataset/All_data/Training_Data/subtaskA_data_all.csv"      # ← 改成你的路径
-#   train_answer: "../dataset/All_data/Training_Data/subtaskA_answers_all.csv"
-#   dev_data:     "../dataset/All_data/Dev_Data/subtaskA_dev_data.csv"
-#   dev_answer:   "../dataset/All_data/Dev_Data/subtaskA_gold_answers.csv"
-#   test_data:    "../dataset/All_data/Test_Data/subtaskA_test_data.csv"
-#   batch_size: 16
-#   lr: 2e-5
-#   epochs: 4
+model_name: "bert-base-uncased"
+# model_name: "roberta-large"
 
-
-
-# # ======== Task B ========
-# taskB:
-#   train_data:   "../dataset/All_data/Training_Data/subtaskB_data_all.csv"      # ← 改成你的路径
-#   train_answer: "../dataset/All_data/Training_Data/subtaskB_answers_all.csv"
-#   dev_data:     "../dataset/All_data/Dev_Data/subtaskB_dev_data.csv"
-#   dev_answer:   "../dataset/All_data/Dev_Data/subtaskB_gold_answers.csv"
-#   test_data:    "../dataset/All_data/Test_Data/subtaskB_test_data.csv"
-#   batch_size: 8
-#   lr: 2e-5
-#   epochs: 4
-
-
-# ======== 通用配置 ========
-model_name: "roberta-large"
 max_length: 128
-output_dir: "outputs"
+
+# fine-tuned BERT / RoBERTa 的输出目录
+output_dir: "outputs/finetune_bert"
 
 # ======== Task A ========
 taskA:
-  train_data:   "../dataset/All_data/Training_Data/subtaskA_data_all.csv"
-  train_answer: "../dataset/All_data/Training_Data/subtaskA_answers_all.csv"
-  dev_data:     "../dataset/All_data/Dev_Data/subtaskA_dev_data.csv"
-  dev_answer:   "../dataset/All_data/Dev_Data/subtaskA_gold_answers.csv"
-  test_data:    "../dataset/All_data/Test_Data/subtaskA_test_data.csv"
+  train_data:   "dataset/ALL_data/Training_Data/subtaskA_data_all.csv"
+  train_answer: "dataset/ALL_data/Training_Data/subtaskA_answers_all.csv"
+  dev_data:     "dataset/ALL_data/Dev_Data/subtaskA_dev_data.csv"
+  dev_answer:   "dataset/ALL_data/Dev_Data/subtaskA_gold_answers.csv"
+  test_data:    "dataset/ALL_data/Test_Data/subtaskA_test_data.csv"
+  test_answer:  "dataset/ALL_data/Test_Data/subtaskA_gold_answers.csv"
+
   batch_size: 16
   lr: 2e-5
-  epochs: 3
+  epochs: 4
 
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  log_steps: 50
 
 
 # ======== Task B ========
 taskB:
-  train_data:   "../dataset/All_data/Training_Data/subtaskB_data_all.csv"      # ← 改成你的路径
-  train_answer: "../dataset/All_data/Training_Data/subtaskB_answers_all.csv"
-  dev_data:     "../dataset/All_data/Dev_Data/subtaskB_dev_data.csv"
-  dev_answer:   "../dataset/All_data/Dev_Data/subtaskB_gold_answers.csv"
-  test_data:    "../dataset/All_data/Test_Data/subtaskB_test_data.csv"
+  train_data:   "dataset/ALL_data/Training_Data/subtaskB_data_all.csv"
+  train_answer: "dataset/ALL_data/Training_Data/subtaskB_answers_all.csv"
+  dev_data:     "dataset/ALL_data/Dev_Data/subtaskB_dev_data.csv"
+  dev_answer:   "dataset/ALL_data/Dev_Data/subtaskB_gold_answers.csv"
+  test_data:    "dataset/ALL_data/Test_Data/subtaskB_test_data.csv"
+  test_answer:  "dataset/ALL_data/Test_Data/subtaskB_gold_answers.csv"
+
   batch_size: 8
   lr: 2e-5
-  epochs: 3
+  epochs: 4
+
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  log_steps: 50
+
+
+# ======== LLM Prompting ========
+llm_prompt:
+  output_dir: "outputs/llm_prompt"
+
+# ======== LLM Scoring ========
+llm_scoring:
+  bert_output_dir: "outputs/llm_scoring/bert_score"
+  ppl_output_dir: "outputs/llm_scoring/ppl"
+
+# ======== Robustness ========
+robustness:
+  shuffle_output_dir: "outputs/robustness/shuffle"
+  paraphrase_output_dir: "outputs/robustness/paraphrase"
