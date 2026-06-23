@@ -1,4 +1,4 @@
-name: comve
+﻿name: comve
 
 channels:
   - conda-forge
@@ -15,7 +15,11 @@ dependencies:
   - jupyter
   - ipykernel
   - tqdm
+  - pyyaml
+  - sentencepiece
   - pip:
       - torch
       - transformers
-      - pyyaml
+      - accelerate
+      - bitsandbytes
+

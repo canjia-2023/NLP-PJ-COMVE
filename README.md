@@ -1,11 +1,12 @@
 # Commonsense Validation and Explanation
 
-This project studies commonsense validation and explanation using the SemEval-2020 Task 4 ComVE benchmark. It compares four approaches:
+This project studies commonsense validation and explanation using the SemEval-2020 Task 4 ComVE benchmark. The project focus on the five parts below:
 
-1. **Supervised Transformer fine-tuning** with BERT/RoBERTa;
-2. **Zero-shot and one-shot LLM prompting**;
-3. **Unsupervised language-model scoring** with masked-LM scores and causal-LM perplexity;
-4. **Robustness evaluation** under sentence/option shuffling and T5-based paraphrasing.
+1. **Unsupervised language-model scoring** with masked-LM scores and causal-LM perplexity;
+2. **Supervised Transformer fine-tuning** with BERT/RoBERTa;
+3. **Zero-shot and one-shot LLM prompting**;
+4. **Robustness evaluation** under sentence/option shuffling and paraphrasing;
+5. **error ananlysis**.
 
 The project is based on the commonsense reasoning tasks introduced by Wang et al. (2019) and the SemEval-2020 Task 4 benchmark.
 
@@ -92,12 +93,6 @@ conda env create -f environment.yml
 conda activate comve
 ```
 
-If required, install missing Python packages:
-
-```bash
-pip install torch transformers accelerate bitsandbytes pyyaml tqdm sentencepiece
-```
-
 GPU is recommended for fine-tuning, LLM prompting, and T5 paraphrase generation.
 
 
@@ -129,9 +124,6 @@ taskA:
   test_data: "dataset/ALL_data/Test_Data/subtaskA_test_data.csv"
   test_answer: "dataset/ALL_data/Test_Data/subtaskA_gold_answers.csv"
 ```
-
-Since `dataset/` is ignored by `.gitignore`, each user should download the dataset locally before running experiments.
-
 
 ## Configuration
 
